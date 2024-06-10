@@ -1,0 +1,15 @@
+<div class="container p-4 pb-0">
+  <h1>TRONG NƯỚC</h1>
+  <input class="my-2" type="text" ng-model="search">
+
+  <button ng-click="tang()" class="btn btn-danger">Tăng</button>
+  <button ng-click="giam()" class="btn btn-danger">Giảm</button>
+  <div class="row">
+    <div class="col-md-3" ng-repeat="p in products | orderBy:sort | filter:search">
+      <img class="img-fluid" ng-src="{{p.image}}" alt="{{p.name}}">
+      <p>{{p.name}}</p>
+      <p>Giá: {{p.price}} đ</p>
+      <button class="btn btn-primary">Xem chi tiết</button>
+    </div>
+  </div>
+</div>
